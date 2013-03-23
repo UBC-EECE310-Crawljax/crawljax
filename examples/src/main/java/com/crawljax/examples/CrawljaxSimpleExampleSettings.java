@@ -43,8 +43,9 @@ public final class CrawljaxSimpleExampleSettings {
 		crawler.setRandomInputInForms(false);
 		// click these elements
 
-		crawler.click("a");
-		crawler.click("button");
+		System.out.printf("1\n");
+		crawler.click("a", 3);
+		crawler.click("button", 3);
 
 		// except these
 		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
