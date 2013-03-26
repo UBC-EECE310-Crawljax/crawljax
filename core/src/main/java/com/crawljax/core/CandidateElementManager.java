@@ -99,7 +99,12 @@ public class CandidateElementManager implements ExtractorManager {
 		String uniqueString = element.getUniqueString();
 		synchronized (elementsLock) {
 			if (elements.contains(uniqueString)) {
-				return false;
+				if(element.getCount() < element.getNum()) {
+					element.increment();
+					return true;
+				} else {
+					return false;
+				}
 			} else {
 				elements.add(generalString);
 				elements.add(uniqueString);

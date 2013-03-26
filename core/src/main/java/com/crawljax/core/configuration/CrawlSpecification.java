@@ -165,13 +165,7 @@ public class CrawlSpecification {
 	 * @return this CrawlElement
 	 */
 	public CrawlElement click(String tagName, int numTimes) {
-		for(int i = 0; i < numTimes - 1; i++){
-			crawlActions.click(tagName);
-/*			try {
-				Thread.sleep(2000);//give the page a second or two to load
-			} catch (InterruptedException e) {}*/
-		}
-		return crawlActions.click(tagName);
+		return crawlActions.click(tagName, numTimes);
 	}
 
 	/**

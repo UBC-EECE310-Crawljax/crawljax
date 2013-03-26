@@ -88,6 +88,14 @@ public class CrawlActions {
 		return crawlTag;
 	}
 	
+	public CrawlElement click(String tagName, int num) {
+		checkNotRead();
+		Preconditions.checkNotNull(tagName, "Tagname cannot be null");
+		CrawlElement crawlTag = new CrawlElement(EventType.click, tagName.toUpperCase(), num);
+		crawlElements.add(crawlTag);
+		return crawlTag;
+	}
+	
 	private void checkNotRead() {
 		Preconditions.checkState(resultingElementsExcluded == null,
 		        "You cannot modify crawlactions once it's read");
