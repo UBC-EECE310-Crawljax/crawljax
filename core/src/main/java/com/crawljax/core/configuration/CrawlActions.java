@@ -87,7 +87,7 @@ public class CrawlActions {
 		crawlElements.add(crawlTag);
 		return crawlTag;
 	}
-
+	
 	private void checkNotRead() {
 		Preconditions.checkState(resultingElementsExcluded == null,
 		        "You cannot modify crawlactions once it's read");

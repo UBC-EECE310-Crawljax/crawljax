@@ -167,9 +167,9 @@ public class CrawlSpecification {
 	public CrawlElement click(String tagName, int numTimes) {
 		for(int i = 0; i < numTimes - 1; i++){
 			crawlActions.click(tagName);
-			try {
+/*			try {
 				Thread.sleep(2000);//give the page a second or two to load
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {}*/
 		}
 		return crawlActions.click(tagName);
 	}

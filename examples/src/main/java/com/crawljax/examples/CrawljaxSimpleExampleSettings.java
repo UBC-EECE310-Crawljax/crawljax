@@ -15,8 +15,9 @@ import com.crawljax.core.configuration.ThreadConfiguration;
 public final class CrawljaxSimpleExampleSettings {
 
 	private static final String URL = "http://www.google.com";
+//	private static final String URL = "http://www.facebook.com";
 	private static final int MAX_DEPTH = 2;
-	private static final int MAX_NUMBER_STATES = 8;
+	private static final int MAX_NUMBER_STATES = 20;
 
 	private CrawljaxSimpleExampleSettings() {
 
@@ -43,15 +44,26 @@ public final class CrawljaxSimpleExampleSettings {
 		crawler.setRandomInputInForms(false);
 		// click these elements
 
-		System.out.printf("1\n");
-		crawler.click("a", 3);
-		crawler.click("button", 3);
+//		crawler.click("a", 1);
+//		crawler.click("a").withText("Search");
+//		crawler.click("a").withText("Search");
+//		for(int i = 0; i < 3; i++) {
+//			crawler.click("a").withText("Search");
+//		}
+//		for(int i = 0; i < 3; i++) {
+			crawler.click("button");//.withText("I'm Feeling Lucky");
+//		}
+		
+//		for(int i = 0; i < 3; i++) {
+//			crawler.click("button").withText("Sign Up");
+//		}
+		
 
 		// except these
-		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
-		crawler.dontClick("a").withText("Language Tools");
+//		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
+//		crawler.dontClick("a").withText("Language Tools");
 
-		crawler.setInputSpecification(getInputSpecification());
+//		crawler.setInputSpecification(getInputSpecification());
 
 		// limit the crawling scope
 		crawler.setMaximumStates(MAX_NUMBER_STATES);

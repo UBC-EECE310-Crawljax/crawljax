@@ -313,7 +313,7 @@ public class CandidateElementExtractor {
 		}
 
 		for (CandidateElement candidateElement : candidateElements) {
-			if (!clickOnce || checkedElements.markChecked(candidateElement)) {
+//			if (!clickOnce || checkedElements.markChecked(candidateElement)) {
 				LOG.debug("Found new candidate element: {} with eventableCondition {}",
 				        candidateElement.getUniqueString(), eventableCondition);
 				candidateElement.setEventableCondition(eventableCondition);
@@ -323,7 +323,7 @@ public class CandidateElementExtractor {
 				 * without 'atusa' attribute to make sure an form action element is only clicked for
 				 * its defined values
 				 */
-			}
+//			}
 		}
 	}
 
