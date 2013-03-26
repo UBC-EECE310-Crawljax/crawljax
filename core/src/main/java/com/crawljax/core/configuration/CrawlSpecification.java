@@ -130,8 +130,15 @@ public class CrawlSpecification {
 	 * @return this CrawlElement
 	 */
 	public void click(String... tagNames) {
+		int i;
+		
+//		CrawlAttribute crawl = new CrawlAttribute("name", "number", 3);
+		
+		for(i=0; i<3; i++)//crawl.getNum(); i++)
+		{
 		for (String tagName : tagNames) {
 			crawlActions.click(tagName);
+		}
 		}
 	}
 
@@ -151,9 +158,12 @@ public class CrawlSpecification {
 	 * @return this CrawlElement
 	 */
 	public CrawlElement click(String tagName) {
+		System.out.printf("Clicking");
+		crawlActions.click(tagName); // test for click(tagName)
+		System.out.printf("Clicking");
 		return crawlActions.click(tagName);
 	}
-
+	
 	/**
 	 * Set of HTML elements Crawljax will NOT examine during crawling When an HTML is present in the
 	 * click and dontClick sets, then the element will not be clicked. For example: 1) <a
