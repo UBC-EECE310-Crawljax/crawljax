@@ -35,7 +35,7 @@ public class WivetTest {
 		crawler.setDepth(0);
 		crawler.setRandomInputInForms(true);
 		crawler.clickMoreElements();
-		crawler.setClickOnce(true);
+		crawler.setClickOnce(1);
 		crawler.setWaitTimeAfterReloadUrl(20, TimeUnit.MILLISECONDS);
 		crawler.setWaitTimeAfterEvent(200, TimeUnit.MILLISECONDS);
 		crawler.dontClick("a").withAttribute("href", "../innerpages/2_2.php");

@@ -76,7 +76,7 @@ public class CrawlSpecification {
 
 	private boolean testInvariantsWhileCrawling = true;
 
-	private boolean clicklOnce = true;
+	private int clicklOnce = 1;
 	private boolean disableCrawlFrames = false;
 
 	/**
@@ -451,7 +451,7 @@ public class CrawlSpecification {
 	/**
 	 * @return the crawl once value.
 	 */
-	protected boolean getClickOnce() {
+	protected int getClickOnce() {
 		return this.clicklOnce;
 	}
 
@@ -459,7 +459,7 @@ public class CrawlSpecification {
 	 * @param clickOnce
 	 *            the crawl once value;
 	 */
-	public void setClickOnce(boolean clickOnce) {
+	public void setClickOnce(int clickOnce) {
 		this.clicklOnce = clickOnce;
 	}
 

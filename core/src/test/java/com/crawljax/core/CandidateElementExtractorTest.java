@@ -72,7 +72,7 @@ public class CandidateElementExtractorTest {
 		crawler = new CEETCrawler(controller);
 
 		crawler.goToInitialURL();
-		spec.setClickOnce(true);
+		spec.setClickOnce(1);
 
 		Thread.sleep(400);
 	}

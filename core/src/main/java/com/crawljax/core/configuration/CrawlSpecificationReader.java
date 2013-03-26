@@ -84,7 +84,7 @@ public class CrawlSpecificationReader implements IgnoreFrameChecker {
 	/**
 	 * @return true if each candidate element should be examined only once.
 	 */
-	public boolean getClickOnce() {
+	public int getClickOnce() {
 		return crawlSpecification.getClickOnce();
 	}
 
