@@ -9,6 +9,7 @@ public class CrawlAttribute {
 
 	private final String name;
 	private final String value;
+	private final int num;
 
 	/**
 	 * Note use a % as wildcard in name of value.
@@ -21,8 +22,15 @@ public class CrawlAttribute {
 	protected CrawlAttribute(String name, String value) {
 		this.name = name;
 		this.value = value;
+		this.num = 1;
 	}
 
+	protected CrawlAttribute(String name, String value, int num) {
+		this.num = num;
+		this.name = name;
+		this.value = value;
+	}
+	
 	@Override
 	public String toString() {
 		return getName() + "=" + getValue();

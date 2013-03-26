@@ -89,6 +89,11 @@ public final class CrawlElement {
 		return this;
 	}
 
+	public CrawlElement withNumClicks(String attributeName, String value, int num) {
+		this.crawlAttributes.add(new CrawlAttribute(attributeName, value, num));
+		return this;
+	}
+
 	/**
 	 * Restrict CrawlElement to include only HTML elements which are under HTML element X which
 	 * identified by the xpath expression xpathExpression When xpathExpression returns no HTML
