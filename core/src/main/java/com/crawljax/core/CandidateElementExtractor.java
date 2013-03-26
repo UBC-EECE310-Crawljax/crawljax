@@ -228,7 +228,7 @@ public class CandidateElementExtractor {
 			// check if element is a candidate
 			String id = element.getNodeName() + ": " + DomUtils.getAllElementAttributes(element);
 			try {
-				if (matchesXpath && !checkedElements.isChecked(id)
+				if (matchesXpath // && !checkedElements.isChecked(id)
 				        && isElementVisible(dom, element) && !filterElement(attributes, element)
 				        && !isExcluded(dom, element, eventableConditionChecker)) {
 					addElement(element, result, tagElement);
@@ -313,7 +313,8 @@ public class CandidateElementExtractor {
 		}
 
 		for (CandidateElement candidateElement : candidateElements) {
-//			if (!clickOnce || checkedElements.markChecked(candidateElement)) {
+			//if (!clickOnce) {// || checkedElements.markChecked(candidateElement)) {
+			if (checkedElements.markChecked(candidateElement)) {
 				LOG.debug("Found new candidate element: {} with eventableCondition {}",
 				        candidateElement.getUniqueString(), eventableCondition);
 				candidateElement.setEventableCondition(eventableCondition);
@@ -323,7 +324,7 @@ public class CandidateElementExtractor {
 				 * without 'atusa' attribute to make sure an form action element is only clicked for
 				 * its defined values
 				 */
-//			}
+			}
 		}
 	}
 

@@ -51,7 +51,7 @@ public final class CrawljaxSimpleExampleSettings {
 //			crawler.click("a").withText("Search");
 //		}
 //		for(int i = 0; i < 3; i++) {
-			crawler.click("button");//.withText("I'm Feeling Lucky");
+			crawler.click("button", 3).withText("Google Search");
 //		}
 		
 //		for(int i = 0; i < 3; i++) {

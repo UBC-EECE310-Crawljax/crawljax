@@ -306,6 +306,11 @@ public class StateVertex implements Serializable {
 		for (CandidateCrawlAction candidateAction : candidateActions) {
 			if (last != candidateAction.getCandidateElement()) {
 				last = candidateAction.getCandidateElement();
+				candidateAction.getCandidateElement().increment();
+				list.add(last);
+			} else if (candidateAction.getCandidateElement().getCount() < candidateAction.getCandidateElement().getNum()) {
+				last = candidateAction.getCandidateElement();
+				candidateAction.getCandidateElement().increment();
 				list.add(last);
 			}
 		}

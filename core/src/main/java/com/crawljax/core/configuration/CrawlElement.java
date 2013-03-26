@@ -33,6 +33,12 @@ import com.google.common.collect.Lists;
  * @author DannyRoest@gmail.com (Danny Roest)
  */
 public final class CrawlElement {
+	
+	private int num_times;
+	
+	
+	
+	
 
 	private final String tagName;
 	private final List<CrawlAttribute> crawlAttributes = Lists.newLinkedList();
@@ -55,6 +61,20 @@ public final class CrawlElement {
 		this.id = "id" + hashCode();
 		this.eventType = eventType;
 	}
+	
+	
+	
+	protected CrawlElement(EventType eventType, String tagName, int num_times) {
+		this.tagName = tagName.toUpperCase();
+		this.id = "id" + hashCode();
+		this.eventType = eventType;
+		this.num_times = num_times;
+	}
+	
+	
+	
+	
+	
 
 	/**
 	 * Crawljax will crawl the HTML elements while crawling if and only if all the specified

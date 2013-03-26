@@ -19,6 +19,37 @@ import com.google.common.collect.ImmutableSet;
  * @author Danny Roest (dannyroest@gmail.com)
  */
 public class CandidateElement {
+	
+	// Test: Add a counter for number of times to click
+	private int num_times;
+	private int count = 0;
+	
+	public CandidateElement(Element element, Identification identification, String relatedFrame, int num_times) {
+		this.identification = identification;
+		this.element = element;
+		this.relatedFrame = relatedFrame;
+		this.num_times = num_times;
+	}
+	
+	public CandidateElement(Element element, String xpath, int num_times) {
+		this(element, new Identification(Identification.How.xpath, xpath), "");
+		this.num_times = num_times;
+	}
+	
+	public int getNum() {
+		return num_times;
+	}
+	
+	public int getCount() {
+		return count;
+	}
+	
+	public void increment() {
+		count++;
+	}
+	
+	
+	
 
 	private final Identification identification;
 
