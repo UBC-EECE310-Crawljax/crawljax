@@ -400,6 +400,7 @@ public class Crawler implements Runnable {
 			ClickResult clickResult = clickTag(new Eventable(candidateElement, eventType));
 			switch (clickResult) {
 				case cloneDetected:
+					System.out.printf("clone\n");
 					fired = false;
 					// We are in the clone state so we continue with the cloned version to search
 					// for work.
@@ -407,14 +408,17 @@ public class Crawler implements Runnable {
 					spawnThreads(orrigionalState);
 					break;
 				case newState:
+					System.out.printf("new\n");
 					fired = true;
 					// Recurse because new state found
 					spawnThreads(orrigionalState);
 					break;
 				case domUnChanged:
+					System.out.printf("unchanged\n");
 					// Dom not updated, continue with the next
 					break;
 				default:
+					System.out.printf("default\n");
 					break;
 			}
 			return clickResult;

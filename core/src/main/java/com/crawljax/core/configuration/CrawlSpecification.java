@@ -153,26 +153,6 @@ public class CrawlSpecification {
 	public CrawlElement click(String tagName) {
 		return crawlActions.click(tagName);
 	}
-	
-	/**
-	 * Set of HTML elements Crawljax will click during crawling For exmple 1) <a.../> 2) <div/>
-	 * click("a") will only include 1 This set can be restricted by {@link #dontClick(String)}.
-	 * Also set the specify number of time element should be clicked.
-	 * 
-	 * @param tagName, numTimes
-	 *            the tag name of the elements to be included
-	 *            the number times element should be clicked
-	 * @return this CrawlElement
-	 */
-	public CrawlElement click(String tagName, int numTimes) {
-		for(int i = 0; i < numTimes - 1; i++){
-			crawlActions.click(tagName);
-			try {
-				Thread.sleep(2000);//give the page a second or two to load
-			} catch (InterruptedException e) {}
-		}
-		return crawlActions.click(tagName);
-	}
 
 	/**
 	 * Set of HTML elements Crawljax will NOT examine during crawling When an HTML is present in the
