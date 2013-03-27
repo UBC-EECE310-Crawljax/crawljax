@@ -43,19 +43,19 @@ public final class CrawljaxSimpleExampleSettings {
 		crawler.setRandomInputInForms(false);
 		// click these elements
 
-		crawler.setClickOnce(3);
-		//crawler.click("button").withText("Google Search");
-		//crawler.click("button").withText("Google Search");
+		crawler.setClickOnce(4);
 		
-		crawler.click("a");
-		crawler.click("button");
-		//crawler.click("button");
-		//crawler.click("button");
-		//crawler.click("button");
+		for (int i = 0; i < 4; i++){
+			crawler.click("a");
+			crawler.click("button");  //.withText("Google Search");
+			crawler.click("button").withText("Google Search");
+			crawler.dontClick("a").underXPath("//DIV[@id='guser']");
+		}		
+		
 
 		// except these
-		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
-		crawler.dontClick("a").withText("Language Tools");
+//		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
+//		crawler.dontClick("a").withText("Language Tools");
 
 		//crawler.setInputSpecification(getInputSpecification());
 
