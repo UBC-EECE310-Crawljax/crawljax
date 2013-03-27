@@ -398,7 +398,7 @@ public class Crawler implements Runnable {
 
 		if (candidateElement.allConditionsSatisfied(getBrowser())) {
 			ClickResult clickResult = clickTag(new Eventable(candidateElement, eventType));
-			switch (clickResult) {
+			switch(clickResult) {
 				case cloneDetected:
 					fired = false;
 					// We are in the clone state so we continue with the cloned version to search

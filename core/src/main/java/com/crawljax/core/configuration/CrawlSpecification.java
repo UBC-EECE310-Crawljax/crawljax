@@ -158,8 +158,8 @@ public class CrawlSpecification {
 	 * @return this CrawlElement
 	 */
 	public CrawlElement click(String tagName) {
-		System.out.printf("Clicking");
-		crawlActions.click(tagName); // test for click(tagName)
+//		System.out.printf("Clicking");
+//		crawlActions.click(tagName); // test for click(tagName)
 		System.out.printf("Clicking");
 		return crawlActions.click(tagName);
 	}

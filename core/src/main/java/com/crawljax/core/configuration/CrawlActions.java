@@ -81,10 +81,12 @@ public class CrawlActions {
 	 * @return this CrawlElement
 	 */
 	public CrawlElement click(String tagName) {
-		checkNotRead();
-		Preconditions.checkNotNull(tagName, "Tagname cannot be null");
+//		checkNotRead();
+//		Preconditions.checkNotNull(tagName, "Tagname cannot be null");
 		CrawlElement crawlTag = new CrawlElement(EventType.click, tagName.toUpperCase());
+//		CrawlElement crawl2 = crawlTag;
 		crawlElements.add(crawlTag);
+///		crawlElements.add(crawl2);
 		return crawlTag;
 	}
 

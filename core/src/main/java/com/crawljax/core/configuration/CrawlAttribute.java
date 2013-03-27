@@ -9,7 +9,7 @@ public class CrawlAttribute {
 
 	private final String name;
 	private final String value;
-	private final int num;
+	public final int num;
 
 	/**
 	 * Note use a % as wildcard in name of value.
@@ -48,6 +48,10 @@ public class CrawlAttribute {
 	 */
 	protected String getValue() {
 		return value;
+	}
+
+	public int getNum() {
+		return num;
 	}
 
 }
