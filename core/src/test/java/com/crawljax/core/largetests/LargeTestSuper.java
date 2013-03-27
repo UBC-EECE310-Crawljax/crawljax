@@ -112,7 +112,7 @@ public abstract class LargeTestSuper {
 		crawler.setWaitTimeAfterEvent(waintAfterEvent, TimeUnit.MILLISECONDS);
 		crawler.setWaitTimeAfterReloadUrl(waitAfterReload, TimeUnit.MILLISECONDS);
 		crawler.setDepth(3);
-		crawler.setClickOnce(true);
+		crawler.setClickOnce(1);
 
 		addCrawlElements(crawler);
 

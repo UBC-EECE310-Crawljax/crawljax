@@ -105,7 +105,7 @@ public class PropertiesFile {
 		 * TODO: use getBoolean. we use getInt for backward compatibility. in the future we can use
 		 * file.getBoolean
 		 */
-		crawler.setClickOnce(file.getInt(clickOnce) == 1);
+		crawler.setClickOnce(file.getInt(clickOnce));
 		crawler.setDepth(file.getInt(CRAWLDEPTH));
 
 		crawler.setMaximumStates(file.getInt(CRAWLMAXSTATES));

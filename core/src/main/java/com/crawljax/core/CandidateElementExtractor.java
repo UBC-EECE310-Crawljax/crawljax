@@ -50,7 +50,7 @@ public class CandidateElementExtractor {
 	private final ImmutableMultimap<String, TagElement> excludeTagElements;
 	private final ImmutableList<TagElement> includedTagElements;
 
-	private final boolean clickOnce;
+	private int clickOnce;
 
 	/**
 	 * Create a new CandidateElementExtractor.
@@ -313,7 +313,9 @@ public class CandidateElementExtractor {
 		}
 
 		for (CandidateElement candidateElement : candidateElements) {
-			if (!clickOnce || checkedElements.markChecked(candidateElement)) {
+			if (clickOnce > 0 || checkedElements.markChecked(candidateElement)) {
+				clickOnce -= 1;
+				//System.out.print(clickOnce + "\n");
 				LOG.debug("Found new candidate element: {} with eventableCondition {}",
 				        candidateElement.getUniqueString(), eventableCondition);
 				candidateElement.setEventableCondition(eventableCondition);

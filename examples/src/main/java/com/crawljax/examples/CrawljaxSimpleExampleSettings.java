@@ -16,7 +16,7 @@ public final class CrawljaxSimpleExampleSettings {
 
 	private static final String URL = "http://www.google.com";
 	private static final int MAX_DEPTH = 2;
-	private static final int MAX_NUMBER_STATES = 8;
+	private static final int MAX_NUMBER_STATES = 20;
 
 	private CrawljaxSimpleExampleSettings() {
 
@@ -43,14 +43,21 @@ public final class CrawljaxSimpleExampleSettings {
 		crawler.setRandomInputInForms(false);
 		// click these elements
 
+		crawler.setClickOnce(3);
+		//crawler.click("button").withText("Google Search");
+		//crawler.click("button").withText("Google Search");
+		
 		crawler.click("a");
 		crawler.click("button");
+		//crawler.click("button");
+		//crawler.click("button");
+		//crawler.click("button");
 
 		// except these
 		crawler.dontClick("a").underXPath("//DIV[@id='guser']");
 		crawler.dontClick("a").withText("Language Tools");
 
-		crawler.setInputSpecification(getInputSpecification());
+		//crawler.setInputSpecification(getInputSpecification());
 
 		// limit the crawling scope
 		crawler.setMaximumStates(MAX_NUMBER_STATES);

@@ -407,6 +407,7 @@ public class Crawler implements Runnable {
 					spawnThreads(orrigionalState);
 					break;
 				case newState:
+					System.out.printf("new\n");
 					fired = true;
 					// Recurse because new state found
 					spawnThreads(orrigionalState);
@@ -446,7 +447,7 @@ public class Crawler implements Runnable {
 
 		if (orrigionalState.searchForCandidateElements(candidateExtractor, configurationReader
 		        .getTagElements(), configurationReader.getExcludeTagElements(),
-		        configurationReader.getCrawlSpecificationReader().getClickOnce())) {
+		        configurationReader.getCrawlSpecificationReader().getClickOnce() > 0)) {
 			// Only execute the preStateCrawlingPlugins when it's the first time
 			LOGGER.info("Starting preStateCrawlingPlugins...");
 			List<CandidateElement> candidateElements =
